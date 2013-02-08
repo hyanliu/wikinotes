@@ -25,3 +25,48 @@ or {{{
 }}}
 both way worked
 like nothing should be a problem if you really knows, eh?
+
+
+
+
+== ssh to github ==
+ref: https://help.github.com/articles/generating-ssh-keys
+# make sure that .ssh exists under $HOME
+# backup up the existing keys if any
+{{{
+    $make key_backup
+    $mv id*.* key_backup 
+  }}}
+# generate new ssh key
+{{{
+    $ssh-keygen -t rsa -C 'hyanliu@gmail.com'
+    ...
+    passphrases: Rabbit1@
+    ...
+    xxxxxxxxxxxxxxxxxxxxxxx
+  }}}
+# add key to github
+{{{
+    $clip < ~/.ssh/id_rsa.pub
+    // just another way to copy things onto clipboard for paste
+  }}}
+    - Go to "Account Settings"
+    - Click 'SSH Keys" in the lest sidebar
+    - Click "Add SSH key"
+    - Paste your key into the "Key" field
+    - Click "Add key"
+# test everything out
+{{{
+    $ ssh -T git@github.com
+    $ git remote add origin_ssh git@github.com:hyanliu/wikinotes.git
+    $ git remote -v           // list remote - basically alias for remote urls
+    $ git fetch origin_ssh    // to get everything without merge
+    $ git pull                // get everything and try merge
+    
+    //$ git push [remote-name] [current-branch-name]
+    //$ git remote show origin_ssh 
+    
+  }}}
+  
+
+
