@@ -14,7 +14,9 @@ another thing to note is when I try to clone OSGeo/gdal project using {
      clone https://github.com/OSGeo/gdal.git
 and got the following message:
 ---------------------
-
+0 [main] git 8660 fork: child -1 - forked process 4520 died unexpectedly, retry 0, exit code -1073741515, errno 11
+error: cannot fork() for index-pack: Resource temporarily unavailable
+fatal: fetch-pack: unable to fork off index-pack
 ---------------------
 googling from internet resulted in a solution like
 {{{
