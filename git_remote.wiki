@@ -1,0 +1,27 @@
+git remote is to define/add git project from server, like from github to local rep.
+once this is added, you can 
+{{{
+     remote -v //to list remote gits
+}}}
+then you can git push, pull from remote like
+{{{
+     push -u origin master
+     pull origin
+}}}
+
+another thing to note is when I try to clone OSGeo/gdal project using {
+{{{
+     clone https://github.com/OSGeo/gdal.git
+and got the following message:
+---------------------
+
+---------------------
+googling from internet resulted in a solution like
+{{{
+    $/usr/bin/git https://github.com/OSGeo/gdal.git
+}}}
+or {{{
+    $ PATH=/usr/bin git clone https://github.com/OSGeo/gdal.git
+}}}
+both way worked
+like nothing should be a problem if you really knows, eh?
